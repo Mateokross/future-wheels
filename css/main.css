@@ -1,0 +1,543 @@
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+/*Font*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+button,
+input,
+select,
+textarea,
+p,
+li,
+a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+p,
+li {
+  font-size: 18px;
+}
+
+a {
+  color: white;
+  transition: all .4s ease;
+}
+
+/*Color*/
+
+:root {
+  --accent-color: #FFB200;
+  --accent-color-darker: #a17000;
+  --accent-color-lighter: #ffd26a;
+  --secondary-color: #4c4e56;
+  --footer-color: #4c4e56;
+}
+
+::selection {
+  background: var(--accent-color-lighter);
+  /* WebKit/Blink Browsers */
+}
+
+
+/* ==========================================================================
+   Preloader
+   ========================================================================== */
+.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+form #website {
+  display: none;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: var(--accent-color);
+}
+
+.preloader-circle {
+  position: fixed;
+  left: calc(50% - 25px);
+  top: calc(50% - 25px);
+  opacity: 0;
+  z-index: 21;
+  /*shape & color*/
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--accent-color-lighter);
+}
+
+/*animations*/
+.preloader-circle:first-child {
+  -webkit-animation: loader 2s infinite;
+  animation: loader 2s infinite;
+}
+
+.preloader-circle:nth-child(2) {
+  -webkit-animation: loader 2s 1s infinite cubic-bezier(0, 0, 0.32, 1.08);
+  animation: loader 2s 1s infinite cubic-bezier(0, 0, 0.32, 1.08);
+}
+
+@-webkit-keyframes loader {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes loader {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header nav {
+  height: 0;
+  position: absolute;
+  z-index: 100;
+}
+
+header {
+  height: 70px;
+  padding-bottom: 95px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: inset 0px 84px 27px -23px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width:992px) {
+  header nav {
+    position: fixed !important;
+  }
+}
+
+header .social-container {
+  display: flex;
+  margin: 16px 0 16px 16px;
+  width: 155px;
+  justify-content: space-between;
+}
+
+header .social {
+  display: block;
+  width: 32px;
+  height: 32px;
+  filter: invert(1);
+}
+
+header .social.facebook {
+  background: url(../img/social/facebook.svg);
+}
+
+header .social.instagram {
+  background: url(../img/social/instagram.svg);
+}
+
+header .social.whatsapp {
+  background: url(../img/social/whatsapp.svg);
+}
+
+header .social.email {
+  background: url(../img/social/email.svg);
+}
+
+/*nav on mobile*/
+
+#nav-mobile {
+  padding-top: 5%;
+}
+
+#nav-mobile li {
+  text-align: center;
+}
+
+#nav-mobile li:first-child {
+  padding-bottom: 40px;
+}
+
+
+.nav-wrapper {
+  color: #fafafa;
+}
+
+.brand-logo img {
+  max-height: 70px;
+}
+
+/*titles*/
+
+nav ul a,
+ul.sidenav a {
+  transition: all .4s ease;
+}
+
+nav ul a:hover,
+ul.sidenav a:hover {
+  /*removes materialize style*/
+  background-color: rgba(0, 0, 0, 0);
+  /*new style*/
+  color: var(--accent-color);
+
+}
+
+/*rappi button*/
+.contact.btn {
+  background-color: var(--accent-color);
+  color: white;
+  text-transform: none;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 1.4em;
+  padding: 7px 16px;
+  box-sizing: content-box;
+}
+
+.contact.btn:hover,
+.contact.btn:focus {
+  background-color: var(--accent-color-lighter);
+  color: white;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  height: 77vh;
+  /* fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/bike.jpg);
+  /*para centering */
+  display: flex;
+}
+
+@media only screen and (max-width:650px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/bike.jpg);
+  }
+}
+
+.hero>div {
+  /* -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); */
+  width: 100%;
+  display: flex;
+}
+
+.hero>div.blur {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.hero .container {
+  margin: auto;
+}
+
+
+.hero h1 {
+  margin: 0;
+  /* font-family: 'PT Serif', 'Source Sans Pro', sans-serif; */
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero h5,
+.hero i {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media only screen and (min-width:600px) {
+  .hero .half-width {
+    max-width: 550px;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+.hero h5 {
+  padding: 10px 0 20px 0;
+}
+
+
+@media only screen and (min-width:993px) {
+  .hero .rappi.btn {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Secciones General
+   ========================================================================== */
+
+main {
+  background-color: #fafafa;
+
+}
+
+@media only screen and (min-width:901px) {
+
+  /* cambia el orden de los items */
+  /* #section-2 .row {
+    display: flex;
+    flex-direction: row-reverse;
+  } */
+
+  /* centra los textos verticalmente */
+  .col.s12.m6.l6.valign-wrapper {
+    min-height: 430px;
+  }
+}
+
+/* ==========================================================================
+   Section 2 - 
+   ========================================================================== */
+
+
+.wide-container.section {
+  padding: 3.5em;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.row.icons {
+  text-align: center;
+  padding-top: 1.2em;
+  max-width: 1065px;
+  width: 100%;
+}
+
+.row.icons p {
+  max-width: 200px;
+  margin: 1.2em auto;
+}
+
+/* ==========================================================================
+   Section 3
+   ========================================================================== */
+
+#section-3 {
+  padding-bottom: 140px;
+}
+
+
+
+@media only screen and (min-width:901px) {
+  #section-3 .row {
+    display: flex;
+  }
+
+  #section-3 .col {
+    flex: 1;
+  }
+
+  #section-3 .col:first-child {
+    padding-right: 50px;
+  }
+
+  #section-3 .col:last-child {
+    padding-left: 50px;
+  }
+}
+
+@media only screen and (max-width:900px) {
+  #section-3 .col:last-child {
+    padding-top: 80px;
+  }
+}
+
+/* ==========================================================================
+   FAQ Hero
+   ========================================================================== */
+
+.hero.small {
+  height: 35vh;
+}
+
+/* ==========================================================================
+   FAQ TOC
+   ========================================================================== */
+/* section.toc {
+  max-width: 600px;
+}
+
+section.toc a {
+  color: rgba(0, 0, 0, 0.87);
+  transition: all .4s ease;
+}
+
+section.toc a:hover {
+  color: var(--accent-color);
+}
+
+*/
+/* ==========================================================================
+   FAQ FAQ
+   ========================================================================== */
+section.faq p {
+  padding-bottom: 10px;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer li,
+footer p,
+footer {
+  font-size: 1rem;
+}
+
+
+/* .page-footer {
+  background-color: #00141d;
+} */
+
+/* footer items container */
+/* .page-footer {
+  padding-top: 0px;
+}
+
+.footer-items {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  max-width: 700px;
+} */
+
+/* styles for medium and large screens */
+/* footer p,
+footer h5,
+footer ul {
+  margin: 0;
+  margin-bottom: .3rem;
+}
+
+.footer-items a {
+  font-size: 1.1rem;
+  color: white;
+}
+
+.footer-items ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-items li i {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+*/
+
+/* styles for small screens */
+/* @media only screen and (max-width:560px) {
+  .footer-items ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-items li {
+    padding-bottom: .4rem;
+  }
+
+  .footer-items a {
+    font-size: 1.3rem !important;
+  }
+
+  .footer-items li i {
+    display: none;
+  }
+} */
+
+/* footer copyright */
+.footer-copyright {
+  background-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+/* ==========================================================================
+   Cambios Materialize
+   ========================================================================== */
+
+.row {
+  margin-bottom: 0;
+}
+
+.section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+@media only screen and (max-width:901px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.valign-wrapper {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.responsive-img {
+  display: block;
+  margin: auto;
+}
+
+
+/* ==========================================================================
+   Browser Fixes
+   ========================================================================== */
+/* Firefox */
+
+@-moz-document url-prefix() {
+  /* .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-firefox.jpg) !important;
+  } */
+
+}
