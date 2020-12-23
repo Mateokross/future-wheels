@@ -86,111 +86,80 @@
   </header>
 
   <main>
-    <section class="hero">
+
+    <!-- Purchase modal -->
+    <div id="purchase-modal" class="modal">
+      <div class="modal-content">
+        <h4>Comprar</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nam maxime enim temporibus? </p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+      </div>
+    </div>
+
+
+    <section class="hero small">
       <div class="-blur">
         <div class="container">
           <div class="half-width">
-            <h1>Un título copado</h1>
-            <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima rerum laudantium culpa perspiciatis ab.
-              Veritatis nostrum, porro dolores ullam obcaecati asperiores error, enim sit ad dicta officiis! Provident,
-              et
-              voluptatibus!</h5>
-            <a href="modelos.html" class="btn hero-btn">Ver Modelos</a>
-          </div>
-        </div>
-      </div>
-      <a href="#section-1" class="arrow bounce"></a>
-    </section>
-
-
-
-    <section class="container section" id="section-1">
-      <div class="row">
-        <div class="col s12 m6 l6 valign-wrapper">
-          <h4>¿Quienes Somos?</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aut quisquam est libero unde voluptates quae
-            nam cumque laborum inventore! Magni minus illo iste perferendis excepturi ducimus voluptatum? Nostrum,
-            voluptatem.</p>
-        </div>
-        <div class="col s12 m6 l6 center ">
-          <img class="responsive-img" width="350px" src="img/800x1000.png" alt="-------">
-        </div>
-      </div>
-    </section>
-
-    <section class="wide-container section grey-bg" id="section-2">
-      <div class="row">
-        <div class="col s12 valign-wrapper">
-          <h4>¿Porqué un vehiculo eléctrico?</h4>
-          <div class="row icons">
-            <div class="col m4 s12">
-              <img src="img/150.png" alt="">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-            </div>
-            <div class="col m4 s12">
-              <img src="img/150.png" alt="">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-            </div>
-            <div class="col m4 s12">
-              <img src="img/150.png" alt="">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <h1>Cargos</h1>
+            <div class="back">
+              <a href="modelos.html">Modelos</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="wide-container section" id="section-3">
-      <div class="row">
-        <div class="col s12 valign-wrapper">
-          <h4>Nuestros vehiculos</h4>
-            <a href="modelos.html" class="vehicle-showcase">
-              <div class="image-container g1">
-                <img src="img/vehiculos/motos-1.png" alt="moto 1">
-                <img src="img/vehiculos/motos-2.png" alt="moto 2">
-                <img src="img/vehiculos/motos-3.png" alt="moto 3">
-                <img src="img/vehiculos/motos-4.png" alt="moto 4">
-                <img src="img/vehiculos/motos-6.png" alt="moto 6">
-              </div>
-              <div class="image-container g2">
-                <img src="img/vehiculos/bicicletas-1.png" alt="bicicleta 1">
-                <img src="img/vehiculos/bicicletas-2.png" alt="bicicleta 2">
-                <img src="img/vehiculos/bicicletas-3.png" alt="bicicleta 3">
-                <img src="img/vehiculos/triciclos-1.png" alt="triciclo 1">
-                <img src="img/vehiculos/triciclos-2.png" alt="triciclo 2">
-              </div>
-              <div class="image-container g3">
-                <img src="img/vehiculos/monopatines-1.png" alt="monopatín 1">
-                <img src="img/vehiculos/monopatines-2.png" alt="monopatín 2">
-                <img src="img/vehiculos/monopatines-3.png" alt="monopatín 3">
-                <img src="img/vehiculos/monopatines-4.png" alt="monopatín 4">
-                <img src="img/vehiculos/motos-5.png" alt="moto 4">
-              </div>
-            </a>
+
+    <section class="wide-container section vehicle" id="vehicle-1">
+      <div class="texts">
+        <div>
+          <h3>King Kong</h3>
+          <a href="#purchase-modal" class="contact modal-trigger">Consultar</a>
+          <a href="#!" class="specs" id="v-1">Ver Especificaciones</a>
         </div>
       </div>
-    </section>
-
-
-    <section class="wide-container section grey-bg" id="section-4">
-      <div class="row">
-        <div class="col s12 m6 l6">
-          <h4>Como Comprar</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea aut quisquam est libero unde voluptates quae
-            nam cumque laborum inventore! Magni minus illo iste perferendis excepturi ducimus voluptatum? Nostrum,
-            voluptatem.</p>
-        </div>
-
-        <div class="col s12 m6 l6" style="display: flex;flex-direction: column;justify-content: space-between;">
-          <div>
-            <h4>Garantía y Formas de Pago</h4>
-            <p>Contamos con una garantía de <b> 5 años </b>en motor y hasta <b>1 año</b> en bateria de todos nuestros vehículos eléctricos. Aceptamos pagos en efectivo, transferencia bancaria y mercado pago.</p>
+      <div class="pic king-kong">
+        <div class="info-container">
+          <div class="col table">
+            <table>
+              <tbody>
+                <tr><td>Energía del motor</td><td>Motor transmisión directa a rueda (más potente) 1500 W</td></tr>
+                <tr><td>Voltaje del motor</td><td>72 V</td></tr>
+                <tr><td>Controlador</td><td>12 mosfets</td></tr>
+                <tr><td>Velocidad máxima</td><td>35 km/h</td></tr>
+                <tr><td>Tipos de batería</td><td>De plomo</td></tr>
+                <tr><td>Capacidad de la batería</td><td>72 V 60 Ah.</td></tr>
+                <tr><td>Alcance máximo</td><td>100 Km, carga hasta 600 kg</td></tr>
+                <tr><td>Tiempo de carga de la batería</td><td>8 horas</td></tr>
+                <tr><td>Vida de la batería</td><td>500 ciclos de carga</td></tr>
+                <tr><td>Capacidad de escalada</td><td>15% (500 kg carga)</td></tr>
+               </tbody>
+            </table>
           </div>
+          <div class="col table">
+            <table>
+              <tbody>
+                <tr><td>Tipo de medidor</td><td>Mecánica</td></tr>
+                <tr><td>Frenos (delantero / trasero)</td><td>Disco / Tambor</td></tr>
+                <tr><td>Amortiguador (delanteros/traseros)</td><td>Hidráulico</td></tr>
+                <tr><td>Tamaño de neumático</td><td>F: 3,0-12 R: 4,0-12</td></tr>
+                <tr><td>Dimensiones del producto</td><td>2820 * 1000 + 1300 mm</td></tr>
+                <tr><td>Capacidad máxima de carga</td><td>600 kg</td></tr>
+                <tr><td>Peso neto</td><td>164 kg (sin batería)</td></tr>
+                <tr><td>Peso de la batería</td><td>106 kg</td></tr>
+                <tr><td>Accesorios</td><td>Marchas alta y baja, se le pueden agregar baterías</td></tr>
+                <tr><td>Tamaño del embalaje</td><td>2350 + 1070 + 850 mm</td></tr>
+               </tbody>
+            </table>
 
+            
+          </div>
         </div>
       </div>
     </section>
-
 
   </main>
 

@@ -64,7 +64,7 @@ a {
 
 a:hover {
   /*new style*/
-  color: var(--accent-color);
+  color: var(--accent-color) !important;
 
 }
 
@@ -163,8 +163,8 @@ header {
   }
 }
 
-nav ul a:hover {
-  background-color: rgba(0, 0, 0, 0);
+.sidenav a {
+  font-size: 1.2rem !important;
 }
 
 /*Socials*/
@@ -175,11 +175,29 @@ nav ul a:hover {
   justify-content: space-between;
 }
 
+.sidenav .social-container {
+  margin: auto;
+  width: 78%;
+  margin-top: 1em;
+}
+
 .social {
   display: block;
   width: 32px;
   height: 32px;
   filter: invert(1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sidenav .social {
+  filter: none;
+  padding: 0;
+  line-height: 48px;
+  width: 48px;
+  height: 48px;
+  opacity: 0.85;
 }
 
 .social.facebook {
@@ -668,22 +686,31 @@ section.faq p {
   margin: auto;
 }
 
-.vehicle .texts p {
-  padding-top: 3em;
+.vehicle .texts a.specs {
+  margin-top: 4em;
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.3em;
+  margin-bottom: 1em;
 }
 
-.vehicle .texts p:after {
+.vehicle:not(.grey-bg) .texts a.specs:after {
   content: " >";
   transform: translateY(1px) translateX(7px);
+  position: absolute;
+}
+
+.vehicle.grey-bg .texts a.specs:before {
+  content: "< ";
+  transform: translateY(1px) translateX(-15px);
   position: absolute;
 }
 
 .vehicle .pic {
   width: 65%;
   min-height: 70vh;
-  background: url(../img/vehiculos/motos-1.png);
-  background-size: contain;
+  /* background-size: contain; */
+  background-size: auto 84%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -761,12 +788,13 @@ th:nth-child(3) {
     background: var(--secondary-color);
   }
 
-  .vehicle .texts p {
+  .vehicle .texts a.specs {
     padding-top: 0;
   }
 
-  .vehicle .texts p:after {
-    content: "";
+  .vehicle .texts a.specs:after,
+  .vehicle .texts a.specs:before {
+    content: "" !important;
   }
 
   .vehicle .col.table {
@@ -774,6 +802,74 @@ th:nth-child(3) {
     padding: 1em;
   }
 }
+
+/*vehicle images*/
+
+.vehicle .pic.hawk {
+  background-image: url(../img/vehiculos/motos-1.png);
+}
+
+.vehicle .pic.vintage {
+  background-image: url(../img/vehiculos/motos-3.png);
+}
+
+.vehicle .pic.leo {
+  background-image: url(../img/vehiculos/motos-2.png);
+}
+
+.vehicle .pic.grace {
+  background-image: url(../img/vehiculos/motos-4.png);
+}
+
+.vehicle .pic.z-bot {
+  background-image: url(../img/vehiculos/motos-5.png);
+}
+
+.vehicle .pic.canguu {
+  background-image: url(../img/vehiculos/motos-6.png);
+}
+
+.vehicle .pic.ML2620 {
+  background-image: url(../img/vehiculos/bicicletas-1.png);
+}
+
+.vehicle .pic.ML2010 {
+  background-image: url(../img/vehiculos/bicicletas-2.png);
+}
+
+.vehicle .pic.ML2650 {
+  background-image: url(../img/vehiculos/bicicletas-3.png);
+}
+
+.vehicle .pic.spyracing {
+  background-image: url(../img/vehiculos/monopatines-4.png);
+}
+
+.vehicle .pic.ML986 {
+  background-image: url(../img/vehiculos/monopatines-2.png);
+}
+
+.vehicle .pic.X7 {
+  background-image: url(../img/vehiculos/monopatines-1.png);
+}
+
+.vehicle .pic.velocifero {
+  background-image: url(../img/vehiculos/monopatines-3.png);
+}
+
+.vehicle .pic.shino {
+  background-image: url(../img/vehiculos/triciclos-1.png);
+}
+
+.vehicle .pic.shinox {
+  background-image: url(../img/vehiculos/triciclos-2.png);
+}
+
+.vehicle .pic.king-kong {
+  background-image: url(../img/vehiculos/cargos-1.png);
+}
+
+
 
 /* ==========================================================================
    Footer
