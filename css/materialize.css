@@ -4339,9 +4339,6 @@ nav ul li {
   float: left;
   padding: 0;
 }
-nav ul li.active {
-  background-color: rgba(0, 0, 0, 0.1);
-}
 nav ul a {
   transition: background-color 0.3s;
   font-size: 1rem;
@@ -4358,9 +4355,6 @@ nav ul a.btn, nav ul a.btn-small, nav ul a.btn-large, nav ul a.btn-flat, nav ul 
 nav ul a.btn > .material-icons, nav ul a.btn-small > .material-icons, nav ul a.btn-large > .material-icons, nav ul a.btn-flat > .material-icons, nav ul a.btn-floating > .material-icons {
   height: inherit;
   line-height: inherit;
-}
-nav ul a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
 }
 nav ul.left {
   float: left;
