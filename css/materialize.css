@@ -2616,7 +2616,7 @@ a {
 }
 
 /* 2dp elevation modified*/
-.z-depth-1, .dropdown-content, .btn-floating, .btn, .btn-small, .btn-large, .card, .card-panel, .sidenav, nav {
+.z-depth-1, .dropdown-content, .btn-floating, .btn, .btn-small, .btn-large, .sidenav, nav {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -2640,7 +2640,7 @@ a {
 }
 
 /* 24dp elevation */
-.z-depth-5 {
+.z-depth-5, .modal {
   box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
 
@@ -3244,12 +3244,6 @@ table.responsive-table td {
 
 .no-padding {
   padding: 0 !important;
-}
-
-/* This is needed for some mobile phones to display the Google Icon font properly */
-.material-icons {
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "liga";
 }
 
 .container {
@@ -4609,85 +4603,6 @@ nav .input-field label.active i {
   display: none;
 }
 
-.slider {
-  position: relative;
-  height: 400px;
-  width: 100%;
-}
-.slider.fullscreen {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.slider.fullscreen ul.slides {
-  height: 100%;
-}
-.slider.fullscreen ul.indicators {
-  z-index: 2;
-  bottom: 30px;
-}
-.slider .slides {
-  background-color: #9e9e9e;
-  margin: 0;
-  height: 400px;
-}
-.slider .slides li {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: inherit;
-  overflow: hidden;
-}
-.slider .slides li img {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-}
-.slider .slides li .caption {
-  color: #fff;
-  position: absolute;
-  top: 15%;
-  left: 15%;
-  width: 70%;
-  opacity: 0;
-}
-.slider .slides li .caption p {
-  color: #e0e0e0;
-}
-.slider .slides li.active {
-  z-index: 2;
-}
-.slider .indicators {
-  position: absolute;
-  text-align: center;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-}
-.slider .indicators .indicator-item {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  height: 16px;
-  width: 16px;
-  margin: 0 12px;
-  background-color: #e0e0e0;
-  transition: background-color 0.3s;
-  border-radius: 50%;
-}
-.slider .indicators .indicator-item.active {
-  background-color: #4CAF50;
-}
-
 .carousel {
   overflow: hidden;
   position: relative;
@@ -4763,163 +4678,6 @@ nav .input-field label.active i {
 .carousel.scrolling .carousel-item .materialboxed,
 .carousel .carousel-item:not(.active) .materialboxed {
   pointer-events: none;
-}
-
-.card-panel {
-  transition: box-shadow 0.25s;
-  padding: 24px;
-  margin: 0.5rem 0 1rem 0;
-  border-radius: 2px;
-  background-color: #fff;
-}
-
-.card {
-  position: relative;
-  margin: 0.5rem 0 1rem 0;
-  background-color: #fff;
-  transition: box-shadow 0.25s;
-  border-radius: 2px;
-}
-.card .card-title {
-  font-size: 24px;
-  font-weight: 300;
-}
-.card .card-title.activator {
-  cursor: pointer;
-}
-.card.small, .card.medium, .card.large {
-  position: relative;
-}
-.card.small .card-image, .card.medium .card-image, .card.large .card-image {
-  max-height: 60%;
-  overflow: hidden;
-}
-.card.small .card-image + .card-content, .card.medium .card-image + .card-content, .card.large .card-image + .card-content {
-  max-height: 40%;
-}
-.card.small .card-content, .card.medium .card-content, .card.large .card-content {
-  max-height: 100%;
-  overflow: hidden;
-}
-.card.small .card-action, .card.medium .card-action, .card.large .card-action {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.card.small {
-  height: 300px;
-}
-.card.medium {
-  height: 400px;
-}
-.card.large {
-  height: 500px;
-}
-.card.horizontal {
-  display: flex;
-}
-.card.horizontal.small .card-image, .card.horizontal.medium .card-image, .card.horizontal.large .card-image {
-  height: 100%;
-  max-height: none;
-  overflow: visible;
-}
-.card.horizontal.small .card-image img, .card.horizontal.medium .card-image img, .card.horizontal.large .card-image img {
-  height: 100%;
-}
-.card.horizontal .card-image {
-  max-width: 50%;
-}
-.card.horizontal .card-image img {
-  border-radius: 2px 0 0 2px;
-  max-width: 100%;
-  width: auto;
-}
-.card.horizontal .card-stacked {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  position: relative;
-}
-.card.horizontal .card-stacked .card-content {
-  flex-grow: 1;
-}
-.card.sticky-action .card-action {
-  z-index: 2;
-}
-.card.sticky-action .card-reveal {
-  z-index: 1;
-  padding-bottom: 64px;
-}
-.card .card-image {
-  position: relative;
-}
-.card .card-image img {
-  display: block;
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-.card .card-image .card-title {
-  color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  max-width: 100%;
-  padding: 24px;
-}
-.card .card-content {
-  padding: 24px;
-  border-radius: 0 0 2px 2px;
-}
-.card .card-content p {
-  margin: 0;
-}
-.card .card-content .card-title {
-  display: block;
-  line-height: 32px;
-  margin-bottom: 8px;
-}
-.card .card-content .card-title i {
-  line-height: 32px;
-}
-.card .card-action {
-  background-color: inherit;
-  border-top: 1px solid rgba(160, 160, 160, 0.2);
-  position: relative;
-  padding: 16px 24px;
-}
-.card .card-action:last-child {
-  border-radius: 0 0 2px 2px;
-}
-.card .card-action a:not(.btn):not(.btn-small):not(.btn-large):not(.btn-large):not(.btn-floating) {
-  color: #ffab40;
-  margin-right: 24px;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-}
-.card .card-action a:not(.btn):not(.btn-small):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
-  color: #ffd8a6;
-}
-.card .card-reveal {
-  padding: 24px;
-  position: absolute;
-  background-color: #fff;
-  width: 100%;
-  overflow-y: auto;
-  left: 0;
-  top: 100%;
-  height: 100%;
-  z-index: 3;
-  display: none;
-}
-.card .card-reveal .card-title {
-  cursor: pointer;
-  display: block;
 }
 
 .btn, .btn-small, .btn-large,
@@ -5299,4 +5057,88 @@ body.keyboard-focused .dropdown-content li:focus {
 
 .dropdown-trigger {
   cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  padding: 0;
+  max-height: 70%;
+  width: 55%;
+  margin: auto;
+  overflow-y: auto;
+  border-radius: 2px;
+  will-change: top, opacity;
+}
+.modal:focus {
+  outline: none;
+}
+@media only screen and (max-width : 992px) {
+  .modal {
+    width: 80%;
+  }
+}
+.modal h1, .modal h2, .modal h3, .modal h4 {
+  margin-top: 0;
+}
+.modal .modal-content {
+  padding: 24px;
+}
+.modal .modal-close {
+  cursor: pointer;
+}
+.modal .modal-footer {
+  border-radius: 0 0 2px 2px;
+  background-color: #fafafa;
+  padding: 4px 6px;
+  height: 56px;
+  width: 100%;
+  text-align: right;
+}
+.modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat {
+  margin: 6px 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 999;
+  top: -25%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 125%;
+  width: 100%;
+  background: #000;
+  display: none;
+  will-change: opacity;
+}
+
+.modal.modal-fixed-footer {
+  padding: 0;
+  height: 70%;
+}
+.modal.modal-fixed-footer .modal-content {
+  position: absolute;
+  height: calc(100% - 56px);
+  max-height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+.modal.modal-fixed-footer .modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 0;
+}
+
+.modal.bottom-sheet {
+  top: auto;
+  bottom: -100%;
+  margin: 0;
+  width: 100%;
+  max-height: 45%;
+  border-radius: 0;
+  will-change: bottom, opacity;
 }

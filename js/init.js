@@ -1,14 +1,18 @@
 $(document).ready(function () {
+
+      /* ==========================================================================
+      Materialize - materializecss.com
+      ========================================================================== */
     $('.sidenav').sidenav({
         edge: 'right'
     });
-    $('.materialboxed').materialbox();
-    $('#carousel-agrorrhh').carousel({
-        dist: -130,
-        numVisible: 3
-    });
-    $('#carousel-others').carousel({
-        dist: -30,
-        numVisible: 3
-    });
+
+    $('.dropdown-trigger').dropdown({
+        hover:true,
+        constrainWidth:false,
+        coverTrigger:false,
+        inDuration:400,
+        outDuration:400
+      });
+    $('.modal').modal();
 });

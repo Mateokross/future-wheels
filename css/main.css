@@ -561,7 +561,7 @@ main {
 
 @media only screen and (max-width:900px) {
   #section-4 .col:last-child {
-    padding-top: 80px;
+    padding-top: 50px;
   }
 }
 
@@ -642,8 +642,45 @@ section.faq p {
   padding: 0 !important;
 }
 
-.vehicle .pic {
+
+.vehicle .texts {
   width: 35%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3em;
+}
+
+.vehicle .texts div {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.vehicle .texts h3 {
+  padding-top: 3rem;
+}
+
+.vehicle .texts a.contact {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: auto;
+}
+
+.vehicle .texts p {
+  padding-top: 3em;
+  cursor: pointer;
+}
+
+.vehicle .texts p:after {
+  content: " >";
+  transform: translateY(1px) translateX(7px);
+  position: absolute;
+}
+
+.vehicle .pic {
+  width: 65%;
   min-height: 70vh;
   background: url(../img/vehiculos/motos-1.png);
   background-size: contain;
@@ -651,36 +688,33 @@ section.faq p {
   background-repeat: no-repeat;
 }
 
-.vehicle .info {
-  width: 65%;
+.vehicle.grey-bg .info-container {
   background: var(--secondary-color);
-  display: flex;
-  flex-direction: column;
 }
 
-.vehicle .info h3 {
-  margin: auto;
-  padding-top: 3rem;
-}
-
-.vehicle .info a.contact {
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin: auto;
-}
-
-
-.vehicle .info .info-container {
+.vehicle .info-container {
   max-width: 1800px;
   margin: auto;
   height: 100%;
   display: flex;
+  background: #fafafa;
+  opacity: 0;
+  transition: opacity .4s ease;
 }
 
-.vehicle .info .col.table {
+.opacity {
+  /*applied with js*/
+  opacity: 1 !important;
+}
+
+.vehicle .col.table {
   width: 50%;
   padding: 2em;
+  display: flex;
+}
+
+.vehicle .col.table table {
+  margin: auto
 }
 
 td,
@@ -693,6 +727,52 @@ th:nth-child(2),
 td:nth-child(3),
 th:nth-child(3) {
   padding: 5px 10px;
+}
+
+/*Mobile*/
+
+@media only screen and (max-width:1200px) {
+  .vehicle:not(.grey-bg) {
+    flex-direction: column-reverse;
+  }
+
+  .vehicle.grey-bg {
+    flex-direction: column;
+  }
+
+  .vehicle.grey-bg {
+    background: #fafafa !important;
+  }
+
+  .vehicle .pic,
+  .vehicle .texts {
+    width: 100%
+  }
+
+  .vehicle .pic {
+    height: 50vh;
+  }
+
+  .vehicle .info-container {
+    display: none;
+  }
+
+  .vehicle .texts {
+    background: var(--secondary-color);
+  }
+
+  .vehicle .texts p {
+    padding-top: 0;
+  }
+
+  .vehicle .texts p:after {
+    content: "";
+  }
+
+  .vehicle .col.table {
+    width: 100%;
+    padding: 1em;
+  }
 }
 
 /* ==========================================================================
