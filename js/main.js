@@ -12,10 +12,12 @@ $(window).on("load", function () {
    //get window width
    var w = window.innerWidth;
 
+   if (w > 400){
    //update window width
    window.addEventListener("resize", function() {
         w = window.innerWidth;
     });
+   }
 
 
   $(".specs").click(function(){
