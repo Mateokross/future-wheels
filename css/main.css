@@ -442,6 +442,21 @@ main {
   width: 100%;
 }
 
+.round-icon-container{
+  width: 150px;
+  height: 150px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  margin: auto;
+  display: flex
+}
+.round-icon-container img{
+  filter: invert(1) ;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+
 .row.icons p {
   max-width: 200px;
   margin: 1.2em auto;
