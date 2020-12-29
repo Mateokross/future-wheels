@@ -171,13 +171,13 @@ header {
 .social-container {
   display: flex;
   margin: 16px 0 16px 16px;
-  width: 155px;
+  width: 114px;
   justify-content: space-between;
 }
 
 .sidenav .social-container {
   margin: auto;
-  width: 78%;
+  width: 59%;
   margin-top: 1em;
 }
 
@@ -291,6 +291,9 @@ header {
   margin: auto;
 }
 
+.hero.small .container {
+  padding-top: 10vh;
+}
 
 .hero h1 {
   margin: 0;
@@ -426,7 +429,7 @@ main {
 }
 
 @media only screen and (max-width:1200px) {
-  .wide-container.section {
+  .wide-container.section:not(.grey-bg) {
     padding: 0 2vw !important;
   }
 }
@@ -900,7 +903,23 @@ th:nth-child(3) {
   background-image: url(../img/vehiculos/cargos-1.png);
 }
 
+/* ==========================================================================
+   Modal Purchase
+   ========================================================================== */
 
+.modal-content li a{
+  display: flex;
+  line-height: 2em;
+  height: 2em;
+  color: black;
+  margin:10px;
+}
+
+.modal-content img{
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
 
 /* ==========================================================================
    Footer
@@ -921,7 +940,7 @@ footer .row {
 footer .social-container {
   display: flex;
   margin: 10px 0 0;
-  width: 155px;
+  width: 114px;
   justify-content: space-between;
 }
 
