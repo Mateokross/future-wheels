@@ -47,6 +47,11 @@ a {
   --footer-color: #535353;
 }
 
+::-moz-selection {
+  background: var(--accent-color-lighter);
+  /* WebKit/Blink Browsers */
+}
+
 ::selection {
   background: var(--accent-color-lighter);
   /* WebKit/Blink Browsers */
@@ -60,9 +65,12 @@ html {
 
 a {
   transition: color .4s ease !important;
+  outline: 0;
 }
 
-a:hover {
+a:hover,
+a:focus,
+a:active {
   /*new style*/
   color: var(--accent-color) !important;
 
@@ -167,6 +175,23 @@ header {
   font-size: 1.2rem !important;
 }
 
+/*Logo*/
+nav a.brand-logo {
+  width: 268px;
+}
+
+nav a.brand-logo>img {
+  width: 100%;
+  padding: 7px;
+  margin-left: -46px;
+}
+
+@media only screen and (max-width:992px) {
+  nav a.brand-logo>img {
+    margin: 0
+  }
+}
+
 /*Socials*/
 .social-container {
   display: flex;
@@ -185,6 +210,7 @@ header {
   display: block;
   width: 32px;
   height: 32px;
+  -webkit-filter: invert(1);
   filter: invert(1);
   background-size: cover;
   background-position: center;
@@ -192,6 +218,7 @@ header {
 }
 
 .sidenav .social {
+  -webkit-filter: none;
   filter: none;
   padding: 0;
   line-height: 48px;
@@ -253,6 +280,16 @@ header {
 .dropdown-trigger:focus {
   outline: none;
 }
+
+/*Burger Menu*/
+nav .sidenav-trigger {
+  margin: 7px 0px;
+}
+
+nav .sidenav-trigger i {
+  font-size: 3rem;
+}
+
 
 /* ==========================================================================
    Hero
@@ -363,9 +400,27 @@ body {
 }
 
 .bounce {
-  -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(10px);
+  }
+
+  60% {
+    transform: translateY(5px);
+  }
 }
 
 @keyframes bounce {
@@ -375,9 +430,6 @@ body {
   50%,
   80%,
   100% {
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 
@@ -420,16 +472,18 @@ main {
 
 
 .wide-container.section {
-  padding: 3.5em;
+  padding: 3.5em 0;
   margin-top: 70px;
   margin-bottom: 70px;
-  /* color: white; */
-  /* padding: 0 2rem !important; */
   overflow: hidden;
 }
 
+.wide-container.section .row {
+  width: 90%;
+}
+
 @media only screen and (max-width:1200px) {
-  .wide-container.section:not(.grey-bg) {
+  .wide-container.section:not(.grey-bg):not(.vehicle) {
     padding: 0 2vw !important;
   }
 }
@@ -438,6 +492,11 @@ main {
   background-color: var(--secondary-color);
 }
 
+#section-2 h4 {
+  text-align: center;
+}
+
+
 .row.icons {
   text-align: center;
   padding-top: 1.2em;
@@ -445,7 +504,7 @@ main {
   width: 100%;
 }
 
-.round-icon-container{
+.round-icon-container {
   width: 150px;
   height: 150px;
   background: var(--accent-color);
@@ -453,8 +512,9 @@ main {
   margin: auto;
   display: flex
 }
-.round-icon-container img{
-  filter: invert(1) ;
+
+.round-icon-container img {
+  filter: invert(1);
   width: 80px;
   height: 80px;
   margin: auto;
@@ -481,6 +541,10 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1400px;
+}
+
+#section-3 h4 {
+  text-align: center;
 }
 
 .vehicle-showcase div {
@@ -519,31 +583,63 @@ main {
   transform: translateX(-50%);
   /*animation*/
   position: absolute;
+  -webkit-animation-name: multiple-image-crossfade;
   animation-name: multiple-image-crossfade;
+  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-duration: 20s;
   animation-duration: 20s;
   opacity: 0;
 }
 
 .image-container img:nth-of-type(1) {
+  -webkit-animation-delay: 16s;
   animation-delay: 16s;
 }
 
 .image-container img:nth-of-type(2) {
+  -webkit-animation-delay: 12s;
   animation-delay: 12s;
 }
 
 .image-container img:nth-of-type(3) {
+  -webkit-animation-delay: 8s;
   animation-delay: 8s;
 }
 
 .image-container img:nth-of-type(4) {
+  -webkit-animation-delay: 4s;
   animation-delay: 4s;
 }
 
 .image-container img:nth-of-type(5) {
+  -webkit-animation-delay: 0;
   animation-delay: 0;
+}
+
+
+@-webkit-keyframes multiple-image-crossfade {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 
@@ -582,7 +678,7 @@ main {
 }
 
 #section-4 .row {
-  max-width: 1700px;
+  max-width: 1280px;
 }
 
 @media only screen and (min-width:901px) {
@@ -682,10 +778,14 @@ section.faq p {
    ========================================================================== */
 .vehicle {
   display: flex;
+  justify-content: center;
   margin: 0 !important;
   padding: 0 !important;
 }
 
+.vehicle>div {
+  max-width: calc(1920px / 2);
+}
 
 .vehicle .texts {
   width: 35%;
@@ -830,9 +930,9 @@ th:nth-child(3) {
     padding: 1em;
   }
 
-  .wide-container.section.vehicle.grey-bg:last-child .texts {
+  /* .wide-container.section.vehicle.grey-bg:last-child .texts {
     margin-bottom: 2vw !important;
-  }
+  } */
 }
 
 
@@ -907,15 +1007,15 @@ th:nth-child(3) {
    Modal Purchase
    ========================================================================== */
 
-.modal-content li a{
+.modal-content li a {
   display: flex;
   line-height: 2em;
   height: 2em;
   color: black;
-  margin:10px;
+  margin: 10px;
 }
 
-.modal-content img{
+.modal-content img {
   width: 36px;
   height: 36px;
   margin-right: 10px;
@@ -930,6 +1030,21 @@ footer p,
 footer {
   font-size: 1rem;
 }
+
+@media only screen and (max-width:480px) {
+
+  footer li,
+  footer p,
+  footer {
+    font-size: 1.15rem;
+  }
+
+  footer li {
+    padding-bottom: 4px;
+  }
+
+}
+
 
 footer .row {
   margin-bottom: 2em;
